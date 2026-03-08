@@ -1,0 +1,17 @@
+### LOCALHOST TESTS
+### Get all contacts locally
+GET http://localhost:8080/contacts
+
+### Get a single contact locally
+GET http://localhost:8080/contacts/69ac531ad1555fcb288db461
+
+
+### ==============================
+### DEPLOYED RENDER API
+### ==============================
+
+### Get all contacts (Render)
+GET https://cse341-project1-fd9o.onrender.com/contacts
+
+### Get single contact (Render)
+GET https://cse341-project1-fd9o.onrender.com/contacts/69ac531ad1555fcb288db461
