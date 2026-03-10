@@ -10,6 +10,6 @@ app.use(express.json());
 
 app.use("/contacts", contactsRoutes);
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
