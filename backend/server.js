@@ -11,7 +11,6 @@ const port = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
-/* Swagger configuration */
 const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
@@ -21,12 +20,9 @@ const swaggerOptions = {
       description: "API documentation for the Contacts project"
     },
     servers: [
-      {
-        url: `http://localhost:${port}`
-      },
-      {
-        url: "https://cse341-project1-fd9o.onrender.com"
-      }
+      process.env.RENDER
+        ? { url: "https://cse341-project1-fd9o.onrender.com" }
+        : { url: `http://localhost:${port}` }
     ]
   },
   apis: ["./routes/*.js"]
@@ -36,7 +32,6 @@ const swaggerDocs = swaggerJsdoc(swaggerOptions);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-/* Routes */
 app.use("/contacts", contactsRoutes);
 
 app.listen(port, () => {
