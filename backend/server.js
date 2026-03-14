@@ -22,7 +22,10 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:8080"
+        url: `http://localhost:${port}`
+      },
+      {
+        url: "https://cse341-project1-fd9o.onrender.com"
       }
     ]
   },
